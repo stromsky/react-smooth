@@ -29,6 +29,8 @@ next_ref="v$next_version"
 
 npm test
 
+node scripts/build.js
+
 update_version 'package.json' $next_version
 
 git commit -am "Version $next_version"
@@ -41,7 +43,5 @@ git tag $next_ref
 
 git push origin $next_ref
 #git push origin latest -f
-
-node scripts/build.js
 
 npm publish
